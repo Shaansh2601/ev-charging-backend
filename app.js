@@ -19,7 +19,7 @@ app.use("/stations", fetchingStationsRouter);
 app.use("/sessions", manageSessionsRouter);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../front-end/landingpage.html"));
+  res.send('Hello World')
 });
 
 const PORT = 3000;
