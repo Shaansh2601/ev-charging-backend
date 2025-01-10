@@ -6,9 +6,7 @@ let chargingInterval;
 
 async function fetchStationsData() {
   try {
-    const response = await fetch(
-      "https://ev-charging-backend-hecdehhbbgbye2c6.canadacentral-01.azurewebsites.net/stations"
-    );
+    const response = await fetch("http://localhost:3000/stations");
     const stations = await response.json();
     console.log("fetched stations:", stations);
     return stations;
@@ -91,7 +89,7 @@ async function startCharging() {
   console.log("Starting session for station:", selectedStation);
   try {
     const response = await fetch(
-      "https://ev-charging-backend-hecdehhbbgbye2c6.canadacentral-01.azurewebsites.net/sessions/start-charging",
+      "http://localhost:3000/sessions/start-charging",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -121,7 +119,7 @@ async function completeCharging() {
 
   try {
     const response = await fetch(
-      "https://ev-charging-backend-hecdehhbbgbye2c6.canadacentral-01.azurewebsites.net/sessions/complete-charging",
+      "http://localhost:3000/sessions/complete-charging",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -146,7 +144,7 @@ async function proceedToPayment() {
 
   try {
     const costResponse = await fetch(
-      `https://ev-charging-backend-hecdehhbbgbye2c6.canadacentral-01.azurewebsites.net/sessions/get-cost`,
+      `http://localhost:3000/sessions/get-cost`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
