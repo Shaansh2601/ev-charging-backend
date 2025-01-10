@@ -24,7 +24,7 @@ app.use("/sessions", manageSessionsRouter);
  });
 
 
-var port = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
