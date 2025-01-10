@@ -1,10 +1,10 @@
 const mysql = require("mysql2");
-const stations = require("../charging_stations.json");
+const stations = require("./charging_stations.json");
 
 const db = mysql.createConnection({
-  host: "ev-charging-db.c9egug0iee0z.eu-north-1.rds.amazonaws.com",
-  user: "admin",
-  password: "Khajuria987",
+  host: "ev-charging-db.mysql.database.azure.com",
+  user: "amrit",
+  password: "Amrit@123",
   database: "ev_charging",
 });
 

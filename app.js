@@ -1,4 +1,3 @@
-
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -19,15 +18,12 @@ const manageSessionsRouter = require("./managing_sessions");
 app.use("/stations", fetchingStationsRouter);
 app.use("/sessions", manageSessionsRouter);
 
- app.get("/", (req, res) => {
-   res.sendFile(path.join(__dirname, "../front-end/landingpage.html"));
- });
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../front-end/ev_locator.html"));
+});
 
-
-var PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
-
 module.exports = app;
