@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EV Charging Stations</title>
+    <link rel="stylesheet" href="ev_locator.css" />
+  </head>
+
+  <body>
+    <div id="top-strip">
+      <h2>Future Fuelling</h2>
+    </div>
+
+    <div id="left-panel">
+      <h1>Charge your vehicle anywhere </h1>
+      <button onclick="initMap()">See charging stations</button>
+
+      <div id="session-buttons" style="display: none;">
+        <button id="start-charging" onclick="startCharging()">Start Charging Session</button>
+        <div id="charging-progress" style="display: none;">
+            <h3>Charging Progress</h3>
+            <div id="progress-wrapper">
+              <progress id="progress-bar" value="0" max="100"></progress>
+            </div>
+            <p id="progress-text">0% Charging</p>
+            <p id="total-cost" style="display: none;">Total Cost: $<span id="cost-amount">0.00</span></p>
+          </div>
+        <button id="complete-charging" onclick="completeCharging()" disabled>Complete Energy Transfer</button>
+      </div>
+      
+      
+      <div id="payment-button" style="display: none;">
+        <button id="proceed-to-payment" onclick="proceedToPayment()">Proceed to Payment</button>
+      </div>
+    </div>
+    </div>
+
+    <div id="right-panel">
+      <div id="map"></div>
+
+      <script src="ev_locator.js"></script>
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA94chclBWTX_NWBfyv7SEb8FOtmIfAO9k&libraries=places&callback=initMap"
+        async
+        defer
+      ></script>
+    </div>
+  </body>
+</html>
